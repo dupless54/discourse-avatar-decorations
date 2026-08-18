@@ -1,0 +1,49 @@
+/* ==========================================================================
+   1. AVATAR ÇERÇEVELERİ
+   ========================================================================== */
+.post-avatar, .user-card-avatar, .user-profile-avatar { position: relative; }
+
+.avatar-frame-overlay {
+  position: absolute;
+  top: -10%; left: -10%; width: 120%; height: 120%;
+  border-radius: 50%;
+  background-size: contain; background-repeat: no-repeat; background-position: center;
+  pointer-events: none; z-index: 2;
+}
+
+/* 🔌 SUNUCU YOLUNDAN RESİMLERİ ÇEKME */
+.frame-alevli { background-image: absolute-image-url("/plugins/discourse-cosmetics/images/alevli_cerceve.png"); }
+.frame-sakura { background-image: absolute-image-url("/plugins/discourse-cosmetics/images/sakura.png"); }
+
+/* ==========================================================================
+   2. İSİM PLAKALARI (4 Saniyelik Video Plakalar İçin Altyapı)
+   ========================================================================== */
+.names { position: relative; display: inline-flex; align-items: center; padding: 2px 6px; border-radius: 4px; }
+
+.nameplate-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%; border-radius: 4px;
+  background-size: cover; background-position: center; pointer-events: none; z-index: 0;
+}
+
+.names .username a, .names .username, .names .user-title {
+  position: relative; z-index: 1; color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* 🔌 SUNUCU YOLUNDAN VİDEO/MEDYA PLAKALARI ÇEKME */
+.nameplate-cyberpunk { background-image: absolute-image-url("/plugins/discourse-cosmetics/images/cyberpunk-plaka.mp4"); }
+
+/* ==========================================================================
+   3. KULLANICI KART ARKA PLANLARI
+   ========================================================================== */
+#user-card .card-content { position: relative; overflow: hidden; z-index: 1; }
+
+.user-card-decoration {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover; background-position: center; pointer-events: none; z-index: -1;
+  opacity: 0.6; mix-blend-mode: overlay;
+}
+
+/* 🔌 SUNUCU YOLUNDAN KART ARKA PLANLARINI ÇEKME */
+.card-decor-anime { background-image: absolute-image-url("/plugins/discourse-cosmetics/images/anime-bg.jpg"); }

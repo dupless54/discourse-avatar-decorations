@@ -1,0 +1,9 @@
+{
+  "name": "Discourse Cosmetics",
+  "component": true,
+  "assets": {
+    "alevli": "assets/alevli.png",
+    "cyberpunk-plaka": "assets/cyberpunk.mp4",
+    "anime-bg": "assets/anime-bg.png"
+  }
+}

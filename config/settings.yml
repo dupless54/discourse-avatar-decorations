@@ -1,0 +1,22 @@
+plugins:
+  cosmetics_enabled:
+    default: true
+    client: true
+  
+  # Avatar Dekorasyonları Mağazası
+  avatar_frames_config:
+    default: "alevli:Alevli Çerçeve:group:alevli-grubu|sakura:Sakura Çerçeve:group:vip"
+    type: list
+    client: true
+    
+  # İsim Plakaları Mağazası
+  nameplates_config:
+    default: "cyberpunk:Cyberpunk Plaka:group:cyberpunk-grubu|altin:Altın Plaka:tl2"
+    type: list
+    client: true
+    
+  # Kullanıcı Kartı Dekorasyonları Mağazası
+  user_card_decorations_config:
+    default: "anime_kiz:Anime Arka Plan:group:anime-vip|matrix:Matrix Akışı:group:hacker"
+    type: list
+    client: true
