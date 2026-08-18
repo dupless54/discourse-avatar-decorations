@@ -1,0 +1,20 @@
+// Tüm site genelindeki avatar kapsayıcılarını esnet
+.avatar-wrapper, .main-avatar, .user-card-avatar, .user-profile-avatar {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+// Javascript'in dinamik olarak ekleyeceği çerçeve sınıfı
+.discourse-custom-frame-active {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 145% !important;
+    height: 145% !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: none !important;
+    z-index: 999 !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
