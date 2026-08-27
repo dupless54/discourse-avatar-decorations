@@ -28,3 +28,6 @@ Use current Discourse plugin/Glimmer APIs verified from source. Make the smalles
 Stop for unresolved cross-plugin migration, public-data/privacy, security, or product decisions. Preserve unrelated work and `.claude/settings.local.json`; no destructive Git/deploy/production actions. Remote writes only when explicitly authorized. Prefer targeted reads/diffs over broad scans.
 
 Reusable procedures live under `.agents/skills/` and load on demand; use `task-packet` for non-trivial work.
+
+## Adaptive model / effort routing
+Classify execution risk with `docs/ai/EFFORT_ROUTER.md` before broad reads. Start at the lowest sufficient tier: T0 mechanical, T1 routine, T2 high-risk, T3 exceptional. Escalate for risk/ambiguity rather than task size, and de-escalate when the risky phase ends. Use platform-native workers under `.claude/agents/` or `.codex/agents/` when supported; never trade away correctness, public-data safety, or validation to save tokens.
