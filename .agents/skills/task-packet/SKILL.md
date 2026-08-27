@@ -1,0 +1,24 @@
+---
+name: task-packet
+description: Compress a non-trivial task into the minimum execution context before broader reads.
+---
+# Task packet
+
+Goal:
+Allowed paths:
+Relevant context:
+Acceptance:
+Validation:
+Risk:
+
+Rules:
+- Target 12 lines or fewer, but exceed that target whenever correctness, public-data safety, cross-plugin behavior, or acceptance detail would otherwise be lost.
+- Resolve locations from `docs/ai/REPO_MAP.md` first; it is a navigation hint, never authority. If stale or inconsistent with current source/tests, use targeted search and trust current source/tests.
+- Do not scan media trees first. Inspect exact assets only when named or required by the task.
+- Read `DECISIONS.md` only for public-data/cross-plugin behavior; read `COMMANDS.md` only for validation.
+- Prefer symbol/search -> targeted range -> exact asset.
+- Minimum context is adaptive, not fixed: if a change crosses serializer/public field, entitlement/presentation, CSS/URL safety, cross-plugin migration, or another subsystem boundary, load the relevant local `AGENTS.md`, source, and tests/static evidence.
+- Do not carry history or long reasoning into the packet.
+- Reuse equivalent user-supplied scope/acceptance; skip the packet for trivial one-file, low-risk edits.
+- Absence of CI is never GREEN. When no required workflow/check exists, use targeted validation plus exact diff/scope validation and report `NO_CI`/`NOT_RUN` honestly.
+- Correctness and safety outrank token savings; expand context when evidence is insufficient.
