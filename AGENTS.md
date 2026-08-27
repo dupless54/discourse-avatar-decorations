@@ -8,6 +8,9 @@ Current source/tests > `docs/ai/CURRENT_STATE.md` > nearest local `AGENTS.md` > 
 - shipped media/assets -> `public/AGENTS.md`
 For multi-session work use the minimal `docs/ai/work/<feature>/{state.md,progress.md,implementation-plan.md}` packet.
 
+## Fast task path
+For non-trivial work, use `.agents/skills/task-packet/SKILL.md` before broad reads. Use `docs/ai/REPO_MAP.md` to locate code/assets, `COMMANDS.md` only for validation, and `DECISIONS.md` only for public-data/cross-plugin choices. Skip the formal packet for trivial one-file edits.
+
 ## Product and security invariants
 This plugin exposes avatar-frame, nameplate, and user-card-decoration custom fields as intentional public presentation data and renders them across profile/card/post surfaces.
 
@@ -24,4 +27,4 @@ Use current Discourse plugin/Glimmer APIs verified from source. Make the smalles
 
 Stop for unresolved cross-plugin migration, public-data/privacy, security, or product decisions. Preserve unrelated work and `.claude/settings.local.json`; no destructive Git/deploy/production actions. Remote writes only when explicitly authorized. Prefer targeted reads/diffs over broad scans.
 
-Reusable procedures live under `.agents/skills/` and load on demand.
+Reusable procedures live under `.agents/skills/` and load on demand; use `task-packet` for non-trivial work.
