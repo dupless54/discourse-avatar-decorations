@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # name: discourse-cosmetics
 # about: Avatar dekorasyonları, isim plakaları ve kullanıcı kartı çerçeveleri.
 # version: 1.0.0
@@ -10,7 +12,7 @@ after_initialize do
   User.register_custom_field_type('avatar_frame', :string)
   User.register_custom_field_type('nameplate', :string)
   User.register_custom_field_type('user_card_decoration', :string)
-  
+
   register_editable_user_custom_field(:avatar_frame)
   register_editable_user_custom_field(:nameplate)
   register_editable_user_custom_field(:user_card_decoration)
