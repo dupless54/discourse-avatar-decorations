@@ -25,7 +25,20 @@ This plugin exposes avatar-frame, nameplate, and user-card-decoration custom fie
 ## Implementation/tests/safety
 Use current Discourse plugin/Glimmer APIs verified from source. Make the smallest maintainable change, preserve existing themes/layout, and use locale-backed visible copy where applicable. For authorization/security work read the security skill. Never claim unrun tests passed; use source/static checks when no runtime suite exists.
 
-Stop for unresolved cross-plugin migration, public-data/privacy, security, or product decisions. Preserve unrelated work and `.claude/settings.local.json`; no destructive Git/deploy/production actions. Remote writes only when explicitly authorized. Prefer targeted reads/diffs over broad scans.
+Stop for unresolved cross-plugin migration, public-data/privacy, security, or product decisions. Preserve unrelated work and `.claude/settings.local.json`; no destructive Git/deploy/production actions. Non-merge remote writes require explicit task authorization. Prefer targeted reads/diffs over broad scans.
+
+## CI-only merge gate
+Claude/Gemini/Codex reviewer or verifier approval is not required and must never block merge. Do not request or wait for AI approvals as a merge condition.
+
+For a normal scoped PR, the merge gate is CI only:
+- validate exact changed paths still match the task;
+- use only the latest exact PR head SHA;
+- require the official `Discourse Plugin` CI workflow on that exact head to conclude GREEN;
+- the base branch must keep `.github/workflows/discourse-plugin.yml` using the official Discourse reusable workflow;
+- a new commit invalidates all older CI evidence;
+- `NO_CI`, missing, skipped, pending, cancelled, neutral, stale-head, or failed checks are not GREEN.
+
+When the latest exact head is GREEN and no unresolved security/schema/product/architecture blocker remains, the agent is pre-authorized to merge without another user confirmation. Prefer squash merge with `expected_head_sha` when supported. Never weaken tests or broaden scope just to obtain GREEN.
 
 Reusable procedures live under `.agents/skills/` and load on demand; use `task-packet` for non-trivial work.
 
